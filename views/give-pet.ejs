@@ -1,0 +1,142 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="styles.css" />
+<aside>
+  <nav>
+    <ul>
+      <li><a href="home">Home Page</a></li>
+      <li><a href="search-pets">Find a Dog/Cat</a></li>
+      <li><a href="dogcare">Dog Care</a></li>
+      <li><a href="catcare">Cat Care</a></li>
+      <li><a href="give-pet">Have a Pet to Give Away</a></li>
+      <li><a href="contact">Contact Us</a></li>
+      <li><a href="dashboard">Login/ Logout</a></li>
+      <li><a href="register">Create an account</a></li>
+    </ul>
+  </nav>
+</aside>
+<main>
+  <h1>Submit Your Pet for Adoption</h1>
+  <form
+    id="giveawayForm"
+    onsubmit="return validate()"
+    action="/submit-pet"
+    method="post"
+  >
+    <!-- Pet type selection -->
+    <label for="petType">Type of Pet:</label>
+    <select id="petType" name="petType">
+      <option value="Dog">Dog</option>
+      <option value="Cat">Cat</option>
+    </select>
+
+    <!-- Input for breed -->
+    <div class="input">
+      <label for="breed">*Breed (include mix if applicable):</label>
+      <input type="text" id="breed" name="breed" />
+      <div class="error"></div>
+    </div>
+
+    <!-- Age selection -->
+    <label for="age">*Age of Animal:</label>
+    <select id="age" name="age">
+      <option value="">None</option>
+      <option value="puppy_kitten">Puppy/Kitten</option>
+      <option value="Young">Young</option>
+      <option value="Adult">Adult</option>
+      <option value="Senior">Senior</option>
+    </select>
+
+    <!-- Gender selection -->
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+    <!-- Additional checkboxes -->
+    <div>
+      <label for="getsAlongDogs">
+        <input type="checkbox" id="getsAlongDogs" name="getsAlongDogs" />
+        Gets along with other dogs (optional)
+      </label>
+    </div>
+    <div>
+      <label for="getsAlongCats">
+        <input type="checkbox" id="getsAlongCats" name="getsAlongCats" />
+        Gets along with other cats (optional)
+      </label>
+    </div>
+    <div>
+      <label for="suitableForChildren">
+        <input
+          type="checkbox"
+          id="suitableForChildren"
+          name="suitableForChildren"
+        />
+        Suitable for a family with small children (optional)
+      </label>
+    </div>
+
+    <!-- Comments textarea -->
+    <label for="comments">Comments about the pet (optional):</label>
+    <textarea
+      id="comments"
+      name="comments"
+      rows="4"
+      cols="50"
+      placeholder="Share something special about the pet..."
+    ></textarea>
+
+    <!-- Owner's name and email -->
+    <div class="input">
+      <label for="ownerName">*Owner's Name:</label>
+      <input type="text" id="ownerName" name="ownerName" />
+      <div class="error"></div>
+    </div>
+    <div>
+      <label for="ownerEmail">*Owner's Email:</label>
+      <input type="text" id="ownerEmail" name="ownerEmail" />
+      <div class="error"></div>
+    </div>
+
+    <!-- Form submission buttons -->
+    <button type="submit">Submit</button>
+    <button type="reset">Clear</button>
+  </form>
+</main>
+<script>
+  function validate() {
+    var isValid = true;
+
+    // fetch all the input fields and the error message element
+    const breed = document.getElementById("breed");
+    const owner = document.getElementById("ownerName");
+    const email = document.getElementById("ownerEmail");
+    const age = document.getElementById("age");
+
+    // check if any field is empty
+    if (
+      breed.value.trim() === "" ||
+      owner.value.trim() === "" ||
+      email.value.trim() === "" ||
+      age.value.trim() === ""
+    ) {
+      alert(
+        "No blank values allowed for Breed, Age, Owner Name and Owner Email"
+      );
+      isValid = false;
+    }
+
+    // validate the email format
+    if (email.value) {
+      var emailRegex =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if (!emailRegex.test(email.value) || !email.value.endsWith(".com")) {
+        alert("Invalid Email Format");
+        isValid = false;
+      }
+    }
+    return isValid;
+  }
+</script>
+<%- include('partials/footer') %>

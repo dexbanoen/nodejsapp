@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 60px; /* equal to the header's height */
+}
+
+header {
+  background-color: #3ec9b2;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  height: 80px; /* fixed height */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+header img {
+  width: 50px;
+  height: auto;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+}
+
+aside {
+  background-color: #f4f4f4;
+  width: 200px;
+  position: fixed;
+  top: 80px; /* Start below the header */
+  bottom: 60px; /* Stop above the footer */
+  left: 0;
+  overflow-y: auto;
+  z-index: 5; /* Lower z-index than the header */
+}
+
+aside nav ul {
+  list-style: none;
+}
+
+aside nav ul li a {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  color: black;
+  border-bottom: 1px solid #ddd;
+}
+
+main {
+  margin-left: 200px;
+  padding: 30px;
+}
+
+footer {
+  background-color: #3ec9b2;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* fixed height for the footer */
+  z-index: 10; /* same z-index as the header for consistency */
+}
+
+/* Simplified styles for the giveaway form */
+
+form#giveawayForm {
+  max-width: 500px;
+  padding-bottom: 80px;
+}
+
+form#giveawayForm label {
+  display: block;
+  margin-top: 10px;
+}
+
+form#giveawayForm input[type="text"],
+form#giveawayForm input[type="email"],
+form#giveawayForm input[type="password"],
+form#giveawayForm select,
+form#giveawayForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form#giveawayForm textarea {
+  resize: vertical;
+  height: 50px; /* fixed height for consistency */
+}
+
+form#giveawayForm button {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+form#giveawayForm input {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+form#giveawayForm button:hover,
+input[type="submit"]:hover {
+  background-color: #e2e2e2;
+}
+
+/* style for checkboxes to align with text */
+form#giveawayForm input[type="checkbox"] {
+  margin-top: 3px;
+}
+
+form#searchPetForm {
+  max-width: 500px;
+  padding-bottom: 80px;
+}
+
+form#searchPetForm label {
+  display: block;
+  margin-top: 10px;
+}
+
+form#searchPetForm input[type="text"],
+form#searchPetForm input[type="email"],
+form#searchPetForm select,
+form#searchPetForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form#searchPetForm textarea {
+  resize: vertical;
+  height: 80px; /* Fixed height for consistency */
+}
+
+form#searchPetForm button {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+form#searchPetForm button:hover {
+  background-color: #e2e2e2;
+}
+
+/* Style for checkboxes to align with text */
+form#searchPetForm input[type="checkbox"] {
+  margin-top: 3px;
+}
+
+/* Adjustments for checkbox labels */
+form#searchPetForm .checkbox-group label {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Style for form buttons */
+form#searchPetForm .form-buttons button {
+  margin-right: 10px;
+}
+
+.pet-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.pet {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 800px;
+}
+
+.pet-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.pet-info {
+  padding: 10px;
+}
+
+.pet-info h3 {
+  margin-top: 0;
+}
+
+.interested-btn {
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.interested-btn:hover {
+  background-color: #e2e2e2;
+}

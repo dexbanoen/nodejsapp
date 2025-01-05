@@ -1,0 +1,21 @@
+<title>My App</title>
+<link rel="stylesheet" href="styles.css" />
+<header>
+  <span id="datetime"></span>
+  <a href="index.html">
+    <img src="pet.png" alt="Pet Logo" />
+    <h1>Meow & Bark</h1>
+  </a>
+</header>
+<script>
+  function updateDateTime() {
+    var now = new Date();
+    var datetimeStr = now.toLocaleDateString() + " " + now.toLocaleTimeString();
+    document.getElementById("datetime").textContent = datetimeStr;
+  }
+  // update the time every second
+  setInterval(updateDateTime, 1000);
+
+  // initialize the date and time on load
+  updateDateTime();
+</script>

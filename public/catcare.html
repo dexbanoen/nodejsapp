@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adopt A Pet</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <span id="datetime"></span>
+      <a href="home">
+        <img src="pet.png" alt="Pet Logo" />
+        <h1>Meow & Bark</h1>
+      </a>
+    </header>
+
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="home">Home Page</a></li>
+          <li><a href="search-pets">Find a Dog/Cat</a></li>
+          <li><a href="dogcare">Dog Care</a></li>
+          <li><a href="catcare">Cat Care</a></li>
+          <li><a href="give-pet">Have a Pet to Give Away</a></li>
+          <li><a href="contact">Contact Us</a></li>
+          <li><a href="dashboard">Login/ Logout</a></li>
+          <li><a href="register">Create an account</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <div>
+        <p>
+          Caring for a cat involves a blend of attentive healthcare, proper
+          nutrition, and mental and emotional enrichment, all tailored to their
+          unique feline needs. A diet rich in quality, cat-appropriate food that
+          matches their life stage, along with constant access to clean water,
+          lays the groundwork for good health. Regular vet check-ups,
+          vaccinations, and preventive measures against parasites are essential
+          to keep them disease-free.
+          <br />
+          <br />
+          Grooming, such as brushing and nail clipping, depends on the breed but
+          generally contributes to their overall well-being. Cats also require a
+          stimulating environment with opportunities for play and exploration to
+          satisfy their natural instincts and keep them mentally sharp. Litter
+          box cleanliness is paramount for their hygiene. Moreover,
+          socialization and gentle handling from an early age help in nurturing
+          a well-adjusted pet. Importantly, respecting their independence while
+          providing affection and companionship fosters a strong, loving bond.
+          In essence, cat care is about understanding and catering to their
+          innate behaviors and needs, ensuring a happy, healthy life together.
+          <br />
+          <br />
+          More information below:
+        </p>
+        <br />
+        <a href="https://www.aspca.org/pet-care/cat-care/general-cat-care"
+          >https://www.aspca.org/pet-care/cat-care/general-cat-care</a
+        >
+      </div>
+    </main>
+
+    <footer>
+      <br />
+      <p>© Meow & Bark. All rights reserved.</p>
+      <a href="privacy.html">Privacy/Disclaimer Statement</a>
+    </footer>
+
+    <script>
+      function updateDateTime() {
+        var now = new Date();
+        var datetimeStr =
+          now.toLocaleDateString() + " " + now.toLocaleTimeString();
+        document.getElementById("datetime").textContent = datetimeStr;
+      }
+
+      // update the time every second
+      setInterval(updateDateTime, 1000);
+
+      // initialize the date and time on load
+      updateDateTime();
+    </script>
+  </body>
+</html>

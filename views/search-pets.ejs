@@ -1,0 +1,88 @@
+<%- include('partials/header') %>
+<aside>
+  <nav>
+    <ul>
+      <li><a href="home">Home Page</a></li>
+      <li><a href="search-pets">Find a Dog/Cat</a></li>
+      <li><a href="dogcare">Dog Care</a></li>
+      <li><a href="catcare">Cat Care</a></li>
+      <li><a href="give-pet">Have a Pet to Give Away</a></li>
+      <li><a href="contact">Contact Us</a></li>
+      <li><a href="dashboard">Login/ Logout</a></li>
+      <li><a href="register">Create an account</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main>
+  <h2>Search for a Pet</h2>
+  <form action="/search-pets" method="post" id="giveawayForm">
+    <!-- Pet Type -->
+    <label for="type">Type of Pet:</label>
+    <select id="type" name="type">
+      <option value="">Any</option>
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+    </select>
+
+    <!-- Breed -->
+    <label for="breed">Breed:</label>
+    <input type="text" id="breed" name="breed" />
+
+    <!-- Age -->
+    <label for="age">Age of Animal:</label>
+    <select id="age" name="age">
+      <option value="">Any</option>
+      <option value="puppy_kitten">Puppy/Kitten</option>
+      <option value="young">Young</option>
+      <option value="adult">Adult</option>
+      <option value="senior">Senior</option>
+    </select>
+
+    <!-- Gender -->
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender">
+      <option value="">Any</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+
+    <!-- Gets Along with Other Dogs -->
+    <label for="getsAlongDogs">
+      <input
+        type="checkbox"
+        id="getsAlongDogs"
+        name="getsAlongDogs"
+        value="yes"
+      />
+      Gets along with other dogs
+    </label>
+
+    <!-- Gets Along with Other Cats -->
+    <label for="getsAlongCats">
+      <input
+        type="checkbox"
+        id="getsAlongCats"
+        name="getsAlongCats"
+        value="yes"
+      />
+      Gets along with other cats
+    </label>
+
+    <!-- Suitable for Children -->
+    <label for="suitableForChildren">
+      <input
+        type="checkbox"
+        id="suitableForChildren"
+        name="suitableForChildren"
+        value="yes"
+      />
+      Suitable for a family with small children
+    </label>
+
+    <!-- Submit and Reset Buttons -->
+    <button type="submit">Search</button>
+    <button type="reset">Clear</button>
+  </form>
+</main>
+<%- include('partials/footer') %>

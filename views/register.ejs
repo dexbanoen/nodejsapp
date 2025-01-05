@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+<aside>
+  <nav>
+    <ul>
+      <li><a href="home">Home Page</a></li>
+      <li><a href="search-pets">Find a Dog/Cat</a></li>
+      <li><a href="dogcare">Dog Care</a></li>
+      <li><a href="catcare">Cat Care</a></li>
+      <li><a href="give-pet">Have a Pet to Give Away</a></li>
+      <li><a href="contact">Contact Us</a></li>
+      <li><a href="dashboard">Login/ Logout</a></li>
+      <li><a href="register">Create an account</a></li>
+    </ul>
+  </nav>
+</aside>
+<main>
+  <h2>Create an Account</h2>
+  <form
+    action="/register"
+    method="POST"
+    id="giveawayForm"
+    onsubmit="return validateRegistration()"
+  >
+    Username:
+    <input type="text" name="username" /><br />
+    Password:
+    <input type="password" name="password" /><br />
+    <input type="submit" value="Register" style="cursor: pointer" />
+    <p><%= message %></p>
+  </form>
+</main>
+<script>
+  function validateRegistration() {
+    var username = document.forms["giveawayForm"]["username"].value;
+    var password = document.forms["giveawayForm"]["password"].value;
+
+    // Username validation: letters and digits only
+    if (!/^[a-zA-Z0-9]+$/.test(username)) {
+      alert("Username must contain only letters and digits.");
+      return false;
+    }
+
+    // Password validation: at least 4 characters, at least one letter, and at least one digit
+    if (password.length < 4) {
+      alert("Password must be at least 4 characters long.");
+      return false;
+    }
+
+    if (!/[a-zA-Z]/.test(password) || !/\d/.test(password)) {
+      alert("Password must contain at least one letter and one digit.");
+      return false;
+    }
+
+    return true; // validation passed
+  }
+</script>
+<%- include('partials/footer') %>

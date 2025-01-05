@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+<style>
+  th {
+    padding-right: 20px;
+  }
+</style>
+
+<aside>
+  <nav>
+    <ul>
+      <li><a href="home">Home Page</a></li>
+      <li><a href="search-pets">Find a Dog/Cat</a></li>
+      <li><a href="dogcare">Dog Care</a></li>
+      <li><a href="catcare">Cat Care</a></li>
+      <li><a href="give-pet">Have a Pet to Give Away</a></li>
+      <li><a href="contact">Contact Us</a></li>
+      <li><a href="dashboard">Login/ Logout</a></li>
+      <li><a href="register">Create an account</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main>
+  <h2>Search Results</h2>
+  <% if (pets.length > 0) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Breed</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Good with Dogs</th>
+        <th>Good with Cats</th>
+        <th>Suitable for Children</th>
+        <th>Comments</th>
+        <th>Owner's Name</th>
+        <th>Owner's Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% pets.forEach(pet => { %>
+      <tr>
+        <td><%= pet.id %></td>
+        <td><%= pet.type %></td>
+        <td><%= pet.breed %></td>
+        <td><%= pet.age %></td>
+        <td><%= pet.gender %></td>
+        <td><%= pet.getsAlongDogs ? 'Yes' : 'No' %></td>
+        <td><%= pet.getsAlongCats ? 'Yes' : 'No' %></td>
+        <td><%= pet.suitableForChildren ? 'Yes' : 'No' %></td>
+        <td><%= pet.comments ? pet.comments : 'None' %></td>
+        <td><%= pet.ownerName %></td>
+        <td><%= pet.ownerEmail %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <% } else { %>
+  <p>No pets found matching your criteria.</p>
+  <% } %> <%- include('partials/footer') %>
+</main>

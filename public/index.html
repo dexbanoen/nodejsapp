@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adopt A Pet</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <span id="datetime"></span>
+      <a href="home">
+        <img src="pet.png" alt="Pet Logo" />
+        <h1>Meow & Bark</h1>
+      </a>
+    </header>
+
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="home">Home Page</a></li>
+          <li><a href="search-pets">Find a Dog/Cat</a></li>
+          <li><a href="dogcare">Dog Care</a></li>
+          <li><a href="catcare">Cat Care</a></li>
+          <li><a href="give-pet">Have a Pet to Give Away</a></li>
+          <li><a href="contact">Contact Us</a></li>
+          <li><a href="dashboard">Login/ Logout</a></li>
+          <li><a href="register">Create an account</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <p style="width: 1000px">
+        At Meow & Bark, we believe that every home deserves the joy that a furry
+        friend can bring. Specializing in cats and dogs, our shop is more than
+        just a place to find your next pet — it's a haven for pet enthusiasts
+        and a starting point for lifelong companionships.
+        <br />
+        <br />
+        Our commitment goes beyond just matching you with the perfect companion.
+        We understand that a pet is an addition to your family, and we pride
+        ourselves on our knowledge and care in ensuring that each animal finds a
+        loving, suitable home. From the playful paws of kittens to the loyal
+        gaze of dogs, our Pet Paradise is a place where the well-being of
+        animals is our top priority.
+        <br />
+        <br />
+        Explore our range of services, get expert advice on care, and discover
+        pets that are waiting for a place to call home. At Pet Paradise, we're
+        not just about pets — we're about creating families.
+      </p>
+    </main>
+
+    <footer>
+      <br />
+      <p>© Meow & Bark. All rights reserved.</p>
+      <a href="privacy.html">Privacy/Disclaimer Statement</a>
+    </footer>
+    <script>
+      function updateDateTime() {
+        var now = new Date();
+        var datetimeStr =
+          now.toLocaleDateString() + " " + now.toLocaleTimeString();
+        document.getElementById("datetime").textContent = datetimeStr;
+      }
+
+      // update the time every second
+      setInterval(updateDateTime, 1000);
+
+      // initialize the date and time on load
+      updateDateTime();
+    </script>
+  </body>
+</html>

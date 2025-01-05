@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adopt A Pet</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <span id="datetime"></span>
+      <a href="home">
+        <img src="pet.png" alt="Pet Logo" />
+        <h1>Meow & Bark</h1>
+      </a>
+    </header>
+
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="home">Home Page</a></li>
+          <li><a href="search-pets">Find a Dog/Cat</a></li>
+          <li><a href="dogcare">Dog Care</a></li>
+          <li><a href="catcare">Cat Care</a></li>
+          <li><a href="give-pet">Have a Pet to Give Away</a></li>
+          <li><a href="contact">Contact Us</a></li>
+          <li><a href="dashboard">Login/ Logout</a></li>
+          <li><a href="register">Create an account</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <h1>Privacy/Disclaimer Statement</h1>
+      <br />
+      <p style="width: 1000px">
+        Dear valued users,
+        <br />
+        <br />
+        At Meow & Bark, we hold your trust and privacy in the highest regard.
+        Rest assured, we pledge to never sell or misuse any of your personal
+        information. Your privacy and security are paramount to us.
+        <br />
+        <br />
+        Furthermore, while we strive to provide accurate and reliable
+        information, we cannot guarantee the accuracy of content posted by
+        individual pet owners or contributors. We kindly ask for your
+        understanding and cooperation in verifying any information before
+        relying on it.
+        <br />
+        <br />
+        Thank you for being a part of our community and entrusting us with your
+        information. If you have any concerns or questions regarding privacy or
+        content accuracy, please don't hesitate to contact us.
+        <br />
+        <br />
+        Sincerely,
+        <br />
+        <br />
+        Meow & Bark Team
+      </p>
+    </main>
+
+    <footer>
+      <br />
+      <p>© Meow & Bark. All rights reserved.</p>
+      <a href="privacy.html">Privacy/Disclaimer Statement</a>
+    </footer>
+    <script>
+      function updateDateTime() {
+        var now = new Date();
+        var datetimeStr =
+          now.toLocaleDateString() + " " + now.toLocaleTimeString();
+        document.getElementById("datetime").textContent = datetimeStr;
+      }
+
+      // update the time every second
+      setInterval(updateDateTime, 1000);
+
+      // initialize the date and time on load
+      updateDateTime();
+    </script>
+  </body>
+</html>
